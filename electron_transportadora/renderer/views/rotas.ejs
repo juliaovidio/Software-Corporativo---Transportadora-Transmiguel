@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/rota.css">
+  <title>Rotas</title>
+</head>
+<body>
+
+  <!-- Menu lateral -->
+  <%- include('partials/menu_lateral') %>
+
+  <div class="main-content">
+    <div class="header-pass">
+      <h1>Lista de Rotas</h1>
+      <a href="/rotas/adicionar" class="btn-cadastrar">Cadastrar Nova Rota</a>
+    </div>
+
+    <!-- Barra de pesquisa -->
+    <form action="/rotas" method="GET" class="search-form">
+      <input type="text" name="q" placeholder="Pesquisar rota..." value="<%= typeof q !== 'undefined' ? q : '' %>">
+      <button type="submit">Buscar</button>
+    </form>
+
+    <!-- Cards -->
+    <div class="clientes-container">
+      <% if (rotas && rotas.length > 0) { %>
+        <% rotas.forEach(r => { %>
+          <div class="cliente-card">
+            <p><strong>Data:</strong> <%= r.data ? new Date(r.data).toLocaleDateString('pt-BR') : '' %></p>
+            <p><strong>Hora Saída:</strong> <%= r.hora_saida %></p>
+            <p><strong>Hora Chegada:</strong> <%= r.hora_chegada %></p>
+            <p><strong>Tipo:</strong> <%= r.tipo %></p>
+            <p><strong>Frequência:</strong> <%= r.frequencia %></p>
+            <p><strong>Descrição:</strong> <%= r.descricao %></p>
+            <hr>
+            <p><strong>Placa Veículo:</strong> <%= r.placa_veiculo %></p>
+            <p><strong>Origem:</strong> <%= r.endereco_origem %></p>
+            <p><strong>Destino:</strong> <%= r.endereco_destino %></p>
+            <p><strong>Distância:</strong> <%= r.distancia %> km</p>
+            <p><strong>Funcionário:</strong> <%= r.nome_funcionario %></p>
+
+            <div class="acoes">
+              <a href="/rotas/editar/<%= r.idRotas %>" class="btn-editar">Editar</a>
+              <!-- Botão Excluir -->
+              <form 
+                action="/rotas/<%= r.idTrajetos %>/delete" 
+                method="POST" 
+                style="display:inline;">
+                <button 
+                  type="submit" 
+                  class="btn-excluir"
+                  onclick="return confirm('Tem certeza que deseja excluir esta rota?');">
+                   Excluir
+                </button>
+              </form>
+            </div>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>Nenhuma rota encontrada.</p>
+      <% } %>
+    </div>
+  </div>
+
+</body>
+</html>

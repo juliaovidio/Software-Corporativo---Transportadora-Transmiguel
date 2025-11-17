@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"> <!-- Define o padrão de caracteres (suporte a acentuação) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Torna o layout responsivo -->
+  <title>Menu Lateral</title> <!-- Título exibido na aba do navegador -->
+  <link rel="stylesheet" href="/css/menu.css"> <!-- Importa o arquivo de estilos CSS externo -->
+</head>
+
+<body>
+  <!-- === SIDEBAR (MENU LATERAL FIXO) === -->
+  <div class="sidebar">
+    
+    <!-- Logo da empresa com destaque em uma parte do nome -->
+    <div class="logo">Trans <span>MIGUEL</span></div>
+
+    <!-- Espaço para foto de perfil -->
+    <div class="profile-pic"></div>
+
+    <!-- Bloco de informações do funcionário -->
+<% if (funcionarios) { %>
+  <div class="user-info">
+    <p><strong><%= funcionarios.nome %></strong></p>
+    <p><em><%= funcionarios.cargo %></em></p>
+  </div>
+<% } else { %>
+  <div class="user-info">
+    <p><strong>Visitante</strong></p>
+  </div>
+<% } %>
+
+    <!-- === MENU PRINCIPAL === -->
+    <div class="menu">
+      <br>
+      <!-- Links fixos do menu -->
+      <a href="/paginicial">Início</a><br>
+      <a href="/passageiro">Passageiro</a><br>
+      <a href="/rotas">Rotas</a><br>
+
+      <% const cargo = (funcionarios && funcionarios.cargo) ? funcionarios.cargo.toLowerCase() : ''; %>
+
+      <!-- Se o usuário for GERENTE, mostra opções extras -->
+      <% if (cargo === 'gerente') { %>
+        <a href="/funcionarios">Funcionários</a><br>
+        <a href="/relatorio">Relatórios</a><br>
+        <a href="/financeiro">Financeiro</a><br>
+      <% } %>
+
+      <!-- Se o usuário for MOTORISTA, mostra o menu específico -->
+      <% if (cargo === 'motorista') { %>
+        <a href="/meus-rotas">Minhas Rotas</a><br>
+      <% } %>
+
+      <!-- Se o usuário for SECRETÁRIO, mostra o menu da agenda -->
+      <% if (cargo === 'secretário' || cargo === 'secretario') { %>
+        <a href="/financeiro">Financeiro</a><br>
+      <% } %>
+
+      <!-- Link comum a todos os usuários -->
+      <a href="/veiculos">Veículos</a><br>
+    </div>
+
+    <!-- === BOTÃO DE SAIR === -->
+    <div class="logout">
+      <!-- Redireciona para a página de login (ou logout) -->
+      <a href="/login">
+        <button type="button">SAIR</button>
+      </a>
+    </div>
+
+  </div> <!-- Fim da sidebar -->
+</body>
+</html>

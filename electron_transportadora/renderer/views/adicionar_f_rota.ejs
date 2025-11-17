@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Financeiro de Rota</title>
+  <link rel="stylesheet" href="../css/adicionar_f_rota.css">
+</head>
+<body>
+  <%- include('partials/menu_lateral') %>
+
+  <main class="main-content">
+    <h1 class="titulo">Adicionar Financeiro de Rota</h1>
+
+    <form action="/financeiro_rota" method="POST" class="form-financeiro">
+
+      <div class="campo-linha">
+        <label for="trajeto">Trajeto(DESCRIÇÃO):</label>
+        <input type="text" id="trajeto" name="trajeto" autocomplete="off" required>
+        <!-- campo oculto que guardará o id do trajeto selecionado -->
+        <input type="hidden" id="trajetos_idTrajetos" name="trajetos_idTrajetos">
+        <div id="sugestoes-trajeto" class="suggestions"></div>
+      </div>
+
+      <div class="campo-linha">
+        <label for="valor_pedagio">Pedágio (R$):</label>
+        <input type="number" step="0.01" id="valor_pedagio" name="valor_pedagio" required>
+
+        <label for="preco_km">Preço/km (R$):</label>
+        <input type="number" step="0.01" id="preco_km" name="preco_km" required>
+      </div>
+
+      <div class="campo-linha">
+        <label for="custo_motorista">Custo do Motorista (R$):</label>
+        <input type="number" step="0.01" id="custo_motorista" name="custo_motorista" required>
+      </div>
+
+      <div class="campo-linha">
+         <label for="valor_total_passageiros">Valor Total Passageiros (R$):</label>
+        <input type="number" step="0.01" id="valor_total_passageiros" name="valor_total_passageiros" required>
+      </div>
+
+      <div class="campo-linha">
+         <label for="lucro">Lucro (R$):</label>
+        <input type="number" step="0.01" id="lucro" name="lucro" required>
+      </div>
+
+      <div class="botoes">
+        <button type="submit" class="btn-salvar">Salvar</button>
+        <a href="/financeiro_rota" class="btn-voltar">Voltar</a>
+      </div>
+    </form>
+  </main>
+  <script src="../js/adicionar_f_rota.js"></script>
+</body>
+</html>

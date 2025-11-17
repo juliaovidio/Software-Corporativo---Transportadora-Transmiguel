@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Financeiro - Passageiro</title>
+  <link rel="stylesheet" href="/css/adicionar_f_passageiro.css">
+</head>
+<body>
+   <%- include('partials/menu_lateral') %>
+
+  <main class="main-content">
+    <h1 class="titulo">Adicionar Pagamento de Passageiro</h1>
+
+    <form id="formPassageiro" action="/financeiro_passageiro/adicionar" method="POST" class="form-financeiro">
+
+      <!-- Campo nome com autocomplete -->
+      <div class="campo-linha">
+        <label for="nome">Nome do Passageiro:</label>
+        <input type="text" id="nome" name="nome" autocomplete="off" required>
+        <ul id="suggestions" class="suggestions" aria-label="Sugestões de passageiros"></ul>
+        <input type="hidden" id="passageiro_idPassageiro" name="passageiro_idPassageiro">
+      </div>
+
+      <div class="campo-linha">
+        <label for="rota">Rota:</label>
+        <input type="text" id="rota" name="rota_display" readonly>
+        <input type="hidden" id="rota_hidden" name="rota">
+      </div>
+
+      <div class="campo-linha">
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" required>
+      </div>
+
+      <div class="campo-linha">
+        <label for="valor_pago">Valor Pago (R$):</label>
+        <input type="number" step="0.01" id="valor_pago" name="valor_pago" required>
+      </div>
+
+      <div class="campo-linha">
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+          <option value="">Selecione</option>
+          <option value="Pago">Pago</option>
+          <option value="Pendente">Pendente</option>
+          <option value="Atrasado">Atrasado</option>
+        </select>
+      </div>
+
+      <div class="campo-linha">
+        <label for="forma_pagamento">Forma de Pagamento:</label>
+        <input type="text" id="forma_pagamento" name="forma_pagamento" required>
+      </div>
+
+      <div class="botoes">
+        <button type="submit" class="btn-salvar">Salvar</button>
+        <a href="/financeiro_passageiro" class="btn-voltar">Voltar</a>
+      </div>
+    </form>
+  </main>
+
+  <script src="../js/adicionar_f_passageiro.js"></script>
+</body>
+</html>

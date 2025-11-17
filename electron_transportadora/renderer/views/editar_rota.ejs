@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Rota</title>
+  <link rel="stylesheet" href="/css/editar_rota.css">
+</head>
+<body>
+  <!-- MENU LATERAL: não passamos explicitamente { funcionarios } para que o partial use res.locals -->
+  <%- include('partials/menu_lateral') %>
+
+  <main class="main-content">
+    <h1 class="titulo">Editar Rota</h1>
+
+    <form action="/rotas/editar/<%= rota.idRotas %>" method="POST" class="form-rota">
+
+      <div class="campo-linha">
+        <label for="endereco_origem">Endereço Origem:</label>
+        <input type="text" id="endereco_origem" name="endereco_origem" value="<%= rota.endereco_origem %>" required>
+
+        <label for="endereco_destino">Endereço Destino:</label>
+        <input type="text" id="endereco_destino" name="endereco_destino" value="<%= rota.endereco_destino %>" required>
+      </div>
+
+      <div class="campo-linha">
+        <label for="distancia">Distância (km):</label>
+        <input type="number" id="distancia" name="distancia" step="0.1" value="<%= rota.distancia %>" required>
+
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" value="<%= rota.descricao %>" required>
+      </div>
+
+      <div class="campo-linha">
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" value="<%= rota.data ? new Date(rota.data).toISOString().split('T')[0] : '' %>" required>
+
+        <label for="frequencia">Frequência:</label>
+        <input type="text" id="frequencia" name="frequencia" value="<%= rota.frequencia %>" required>
+      </div>
+
+      <div class="campo-linha">
+        <label for="hora_saida">Hora Saída:</label>
+        <input type="time" id="hora_saida" name="hora_saida" value="<%= rota.hora_saida %>" required>
+
+        <label for="hora_chegada">Hora Chegada:</label>
+        <input type="time" id="hora_chegada" name="hora_chegada" value="<%= rota.hora_chegada %>" required>
+      </div>
+
+      <div class="campo-linha">
+        <label for="tipo">Tipo:</label>
+        <input type="text" id="tipo" name="tipo" value="<%= rota.tipo %>" required>
+
+        <label for="funcionario">Funcionário:</label>
+        <!-- pré-preenche com o funcionário atual -->
+        <input type="text" id="funcionario" name="funcionario" value="<%= rota.nome_funcionario %>" autocomplete="off" required>
+        <div id="sugestoes-func" class="suggestions"></div>
+      </div>
+
+      <div class="campo-linha">
+        <label for="modelo">Modelo do Veículo:</label>
+        <!-- pré-preenche com o modelo atual -->
+        <input type="text" id="modelo" name="modelo" value="<%= rota.modelo %>" autocomplete="off" required>
+        <div id="sugestoes-veic" class="suggestions"></div>
+
+        <label for="placa">Placa:</label>
+        <input type="text" id="placa" name="placa" value="<%= rota.placa %>" readonly>
+      </div>
+
+      <div class="botoes">
+        <button type="submit" class="btn-salvar">Salvar</button>
+        <a href="/rotas" class="btn-voltar">Voltar</a>
+      </div>
+    </form>
+  </main>
+
+  <!-- JS para autocomplete -->
+  <script src="/js/editar_rota.js"></script>
+
+</body>
+</html>

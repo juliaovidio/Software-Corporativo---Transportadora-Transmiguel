@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/financeiro_rota.css">
+  <title>Financeiro de Rotas</title>
+</head>
+<body>
+
+  <!-- Menu lateral -->
+  <%- include('partials/menu_lateral') %>
+
+  <!-- Conteúdo principal -->
+  <div class="main-content">
+    <div class="header-pass">
+      <h1>Financeiro de Rotas</h1>
+      <a href="/financeiro_rota/adicionar" class="btn-cadastrar">Adicionar Novo Registro</a>
+    </div>
+
+    <!-- Barra de pesquisa -->
+    <form action="/financeiro_rota" method="GET" class="search-form">
+      <input type="text" name="q" placeholder="Pesquisar rota, veículo ou funcionário..." value="<%= typeof q !== 'undefined' ? q : '' %>">
+      <button type="submit">Buscar</button>
+    </form>
+
+    <!-- Cards de financeiro -->
+    <div class="financeiros-container">
+      <% relatorios.forEach(financeiro => { %>
+        <div class="financeiro-card">
+          <p><strong>Veículo:</strong> <%= financeiro.modelo_veiculo %> - <%= financeiro.placa_veiculo %></p>
+          <p><strong>Rota:</strong> <%= financeiro.endereco_origem %> → <%= financeiro.endereco_destino %></p>
+          <p><strong>Funcionário:</strong> <%= financeiro.nome_funcionario %></p>
+          <p><strong>Pedágio:</strong> R$ <%= financeiro.valor_pedagio %></p>
+          <p><strong>Preço/km:</strong> R$ <%= financeiro.preco_km %></p>
+          <p><strong>Custo do Motorista:</strong> R$ <%= financeiro.custo_motorista %></p>
+          <p><strong>Valor Total por Passageiro:</strong> R$ <%= financeiro.valor_total_passageiros %></p>
+          <p><strong>Lucro:</strong> R$ <%= financeiro.lucro %></p>
+
+          <div class="acoes">
+           <a href="/financeiro_rota/editar/<%= financeiro.idfinanceiro_trajeto %>" class="btn-editar">Editar</a>
+
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Adicionar Relatórios</title>
+  <link rel="stylesheet" href="../css/relatorio.css">
+</head>
+<body>
+ <body>
+  <%- include('partials/menu_lateral') %>
+  <main class="main-content">
+    <h1 class="titulo">Relatórios</h1>
+
+  <div class="container">
+    <p><strong>Escolha o tipo de relatório:</strong></p>
+
+      <button class="opcao" onclick="window.location.href='/relatorio_rota'">
+  Relatório de Rotas
+</button>
+
+      <button class="opcao" onclick="window.location.href='/relatorio_pagamento'">
+        Relatório de Passageiros
+      </button>
+
+    </div>
+
+  </div>
+
+  <button class="voltar" onclick="history.back()">Voltar</button>
+  </main>
+</body>
+</html>

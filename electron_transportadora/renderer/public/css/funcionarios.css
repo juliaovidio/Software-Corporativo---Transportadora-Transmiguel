@@ -1,0 +1,88 @@
+/* === ESTILO GERAL DO CORPO === */
+body {
+  margin: 0; /* Remove a margem padrão do navegador para que o layout ocupe toda a tela */
+  font-family: Arial, sans-serif; /* Define a fonte principal como Arial e uma fonte genérica como fallback */
+  display: flex; /* Usa o modelo flexbox para estruturar o layout */
+  height: 100vh; /* Faz o corpo ocupar 100% da altura da tela */
+  background: linear-gradient(to bottom right, #eef1ff, #cfd9ff); /* Aplica um degradê suave de azul claro */
+  color: #222; /* Define a cor padrão do texto como cinza escuro */
+}
+
+/* === CONTEÚDO PRINCIPAL === */
+.container {
+  flex: 1; /* Faz o container crescer para ocupar todo o espaço disponível */
+  padding: 40px 30px; /* Espaçamento interno: 40px em cima/baixo e 30px nas laterais */
+  display: flex; /* Usa flexbox para organizar o conteúdo */
+  flex-direction: column; /* Organiza elementos verticalmente */
+  overflow-y: auto; /* Adiciona barra de rolagem vertical se o conteúdo ultrapassar o tamanho disponível */
+}
+
+/* === TÍTULO PRINCIPAL === */
+.container h2 {
+  font-size: 36px; /* Define um tamanho grande para o título */
+  font-weight: 700; /* Deixa o título em negrito */
+  color: #020219; /* Cor azul escuro para contraste com o fundo */
+  text-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Adiciona uma sombra suave ao texto */
+  margin-bottom: 30px; /* Espaço abaixo do título */
+  letter-spacing: 0.5px; /* Pequeno espaçamento entre letras */
+  text-align: center; /* Centraliza o texto */
+  width: 100%; /* Garante que o título ocupe toda a largura do container */
+}
+
+/* === CONTAINER DE FUNCIONÁRIOS === */
+.funcionarios-container {
+  display: flex; /* Usa flexbox para organizar os cards */
+  flex-wrap: wrap; /* Permite que os cards quebrem linha se não houver espaço */
+  gap: 25px; /* Espaço entre os cards */
+  /*justify-content: center; /* Centraliza os cards horizontalmente */
+}
+
+/* === CARD DE FUNCIONÁRIO === */
+.funcionario-card {
+  background: #fff; /* Fundo branco para destaque */
+  border-radius: 12px; /* Bordas arredondadas */
+  padding: 25px 30px; /* Espaçamento interno do card */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Sombra leve para dar profundidade */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animação suave ao passar o mouse */
+  border-left: 6px solid #04ad; /* Barra colorida à esquerda do card para destaque */
+  width: 320px; /* Largura fixa para os cards */
+  max-width: 100%; /* Garante que não ultrapasse a largura da tela */
+}
+
+/* Efeito hover */
+.funcionario-card:hover {
+  transform: translateY(-3px); /* Eleva o card levemente ao passar o mouse */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12); /* Aumenta a sombra para dar efeito de profundidade */
+}
+
+/* === TEXTO DENTRO DOS CARDS === */
+.funcionario-card p {
+  margin: 8px 0; /* Espaço entre parágrafos */
+  font-size: 16px; /* Define tamanho de fonte legível */
+  line-height: 1.5; /* Espaçamento entre linhas para melhor leitura */
+}
+
+.funcionario-card strong {
+  color: #333; /* Texto em negrito com cor mais escura para destaque */
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) { /* Aplica estilos quando a tela for menor que 768px (tablet ou celular) */
+  body {
+    flex-direction: column; /* Organiza conteúdo em coluna para melhor visualização em telas pequenas */
+  }
+
+  .container {
+    padding: 20px; /* Reduz espaçamento interno para caber melhor em telas menores */
+  }
+
+  .container h2 {
+    font-size: 26px; /* Reduz o tamanho do título para telas menores */
+    text-align: center; /* Garante que o título continue centralizado */
+  }
+
+  .funcionario-card {
+    padding: 20px; /* Reduz o espaçamento interno do card */
+    width: 100%; /* Faz o card ocupar toda a largura disponível */
+  }
+}

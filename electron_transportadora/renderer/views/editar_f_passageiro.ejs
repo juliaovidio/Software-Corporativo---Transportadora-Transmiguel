@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/adicionar_f_passageiro.css">
+  <title>Editar Pagamento de Passageiro</title>
+</head>
+
+<body>
+  <!-- Menu lateral -->
+  <%- include('partials/menu_lateral') %>
+
+  <main class="main-content">
+    <h1 class="titulo">Editar Pagamento de Passageiro</h1>
+
+    <form action="/financeiro_passageiro/editar/<%= pagamento.idPagamento_passageiro %>" 
+          method="POST" 
+          class="form-financeiro">
+
+      <!-- Passageiro -->
+    <div class="campo-linha">
+  <label for="nome">Nome do Passageiro:</label>
+  <input 
+    type="text" 
+    id="nome" 
+    name="nome" 
+    value="<%= passageiros.find(p => p.idPassageiro === pagamento.passageiro_idPassageiro)?.nome || '' %>" 
+    autocomplete="off" 
+    required
+  >
+  <ul id="suggestions" class="suggestions" aria-label="Sugestões de passageiros"></ul>
+  <input 
+    type="hidden" 
+    id="passageiro_idPassageiro" 
+    name="passageiro_idPassageiro" 
+    value="<%= pagamento.passageiro_idPassageiro %>"
+  >
+</div>
+
+      <!-- Data -->
+      <div class="campo-linha">
+        <label for="data">Data do Pagamento:</label>
+        <input type="date" id="data" name="data" 
+               value="<%= pagamento.data ? new Date(pagamento.data).toISOString().split('T')[0] : '' %>" 
+               required>
+      </div>
+
+      <!-- Forma de pagamento -->
+      <div class="campo-linha">
+        <label for="forma_pagamento">Forma de Pagamento:</label>
+        <select id="forma_pagamento" name="forma_pagamento" required>
+          <option value="">Selecione...</option>
+          <option value="Dinheiro" <%= pagamento.forma_pagamento === 'Dinheiro' ? 'selected' : '' %>>Dinheiro</option>
+          <option value="Pix" <%= pagamento.forma_pagamento === 'Pix' ? 'selected' : '' %>>Pix</option>
+          <option value="Cartão" <%= pagamento.forma_pagamento === 'Cartão' ? 'selected' : '' %>>Cartão</option>
+        </select>
+      </div>
+
+      <!-- Valor pago -->
+      <div class="campo-linha">
+        <label for="valor_pago">Valor Pago (R$):</label>
+        <input type="number" id="valor_pago" name="valor_pago" 
+               value="<%= pagamento.valor_pago %>" step="0.01" required>
+      </div>
+
+      <!-- Status -->
+      <div class="campo-linha">
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+          <option value="">Selecione...</option>
+          <option value="Pago" <%= pagamento.status === 'Pago' ? 'selected' : '' %>>Pago</option>
+          <option value="Pendente" <%= pagamento.status === 'Pendente' ? 'selected' : '' %>>Pendente</option>
+          <option value="Atrasado" <%= pagamento.status === 'Atrasado' ? 'selected' : '' %>>Atrasado</option>
+        </select>
+      </div>
+
+      <!-- Botões -->
+      <div class="botoes">
+        <button type="submit" class="btn-salvar">Salvar Alterações</button>
+        <a href="/financeiro_passageiro" class="btn-voltar">Voltar</a>
+      </div>
+    </form>
+  </main>
+
+  <script src="/js/adicionar_f_passageiro.js"></script>
+</body>
+</html>

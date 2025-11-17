@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financeiro - Relatório de Pagamentos</title>
+  <link rel="stylesheet" href="../css/relatorio_pagamento.css">
+</head>
+<body>
+  <%- include('partials/menu_lateral') %>
+
+  <div class="tabela-container">
+    <h2>RELATÓRIO DE PAGAMENTOS DE PASSAGEIROS</h2>
+
+    <!-- 🔍 Área de Pesquisa -->
+    <form method="GET" action="/relatorio_pagamento" class="form-pesquisa">
+      <input 
+        type="text" 
+        name="q" 
+        placeholder="Pesquisar por nome ou forma de pagamento..." 
+        value="<%= q || '' %>" 
+        class="input-pesquisa"
+      >
+      <button type="submit" class="btn-pesquisar">Buscar</button>
+    </form>
+
+    <!-- 🧾 Tabela de Relatórios -->
+    <table class="tabela-financeiro">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Data</th>
+          <th>Valor Pago</th>
+          <th>Status</th>
+          <th>Forma de Pagamento</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% if (relatorios && relatorios.length > 0) { %>
+          <% relatorios.forEach(relatorio => { %>
+            <tr>
+              <td><%= relatorio.nome %></td>
+              <td><%= relatorio.data.toLocaleDateString('pt-BR') %></td>
+              <td>R$ <%= relatorio.valor_pago.toFixed(2) %></td>
+              <td><%= relatorio.status %></td>
+              <td><%= relatorio.forma_pagamento %></td>
+            </tr>
+          <% }) %>
+        <% } else { %>
+          <tr>
+            <td colspan="5" style="text-align:center; color:#777; padding:15px;">
+              Nenhum relatório encontrado.
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+
+    <!-- 🔙 Botão Voltar -->
+   <button class="voltar" onclick="window.location.href='/relatorio'">
+  Voltar
+</button>
+  </div>
+</body>
+</html>

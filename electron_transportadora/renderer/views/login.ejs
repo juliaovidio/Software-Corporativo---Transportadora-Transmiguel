@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - TransMiguel</title>
+  <link rel="stylesheet" href="/css/login.css" />
+</head>
+<body>
+  <!-- Logo principal -->
+  <div class="logo">
+    <h1><span>Trans</span> MIGUEL</h1>
+  </div>
+
+  <!-- Caixa de login -->
+  <div class="login-box">
+    <form id="loginForm" action="/login" method="POST">
+      
+      <!-- Campo LOGIN -->
+      <label for="email">LOGIN:</label>
+      <input type="text" name="email" id="email" placeholder="Digite seu email" required>
+      <% if (typeof erroEmail !== 'undefined') { %>
+        <div class="erro-msg"><%= erroEmail %></div>
+      <% } %>
+
+     <!-- Campo SENHA com botão de mostrar senha -->
+<!-- Campo SENHA -->
+<label for="senha">SENHA:</label>
+<div class="senha-container">
+  <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
+
+  <!-- Botão de mostrar/ocultar senha -->
+  <button type="button" class="show-password-btn" onclick="toggleSenha()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#004aad" viewBox="0 0 24 24">
+      <path d="M12 5c-7 0-10 7-10 7s3 7 10 7 10-7 10-7-3-7-10-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+    </svg>
+  </button>
+</div>
+
+<!-- Mensagem de erro da senha -->
+<% if (typeof erroSenha !== 'undefined') { %>
+  <div class="erro-msg"><%= erroSenha %></div>
+<% } %>
+
+
+      
+
+      <!-- Botão -->
+      <button type="submit">ENTRAR</button>
+    </form>
+  </div>
+  
+  <script src="../js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualização de Motoristas</title>
+  <link rel="stylesheet" href="../css/motorista.css">
+</head>
+<body>
+
+  <!-- Menu lateral -->
+  <%- include('partials/menu_motorista') %>
+
+  <div class="main-content">
+    <h1>Visualização de Trajeto dos Motoristas</h1>
+
+    <!-- Barra de busca -->
+    <form action="/motoristas" method="get" class="search-form">
+      <input type="text" name="q" value="<%= q || '' %>" placeholder="Motorista, destino e rota...">
+      <button type="submit">Buscar</button>
+    </form>
+
+    <!-- Cards de motoristas -->
+    <div class="atividades-container">
+      <% if (motoristas && motoristas.length > 0) { %>
+        <% motoristas.forEach(motorista => { %>
+          <div class="card">
+            <p><strong>Data:</strong> <%= motorista.dataFormatada %></p>
+            <p><strong>Hora de Saída:</strong> <%= motorista.hora_saida %></p>
+            <p><strong>Hora de Chegada:</strong> <%= motorista.hora_chegada %></p>
+            <p><strong>Tipo:</strong> <%= motorista.tipo %></p>
+            <p><strong>Frequência:</strong> <%= motorista.frequencia %></p>
+            <p><strong>Origem:</strong> <%= motorista.endereco_origem %></p>
+            <p><strong>Destino:</strong> <%= motorista.endereco_destino %></p>
+            <p><strong>Distância:</strong> <%= motorista.distancia %></p>
+            <p><strong>Veículo:</strong> <%= motorista.modelo_veiculo %> (<%= motorista.placa_veiculo %>)</p>
+            <p><strong>Motorista:</strong> <%= motorista.nome_funcionario %></p>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>Nenhum trajeto encontrado.</p>
+      <% } %>
+    </div>
+  </div>
+
+  <!-- Script externo -->
+  <script src="../js/motorista.js"></script>
+</body>
+</html>

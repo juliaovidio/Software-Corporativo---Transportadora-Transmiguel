@@ -1,0 +1,118 @@
+/* ===== Fundo da página ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #004badab, #0015ff00, #004badab);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding-top: 50px;
+  transform: translateY(-40px);
+}
+
+/* ===== Logo principal ===== */
+.logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo h1 {
+  font-size: 90px;
+  font-weight: bold;
+  color: #004aad;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+}
+
+.logo h1 span {
+  color: black;
+  font-style: italic;
+  font-weight: 900;
+}
+
+/* ===== Caixa do formulário ===== */
+.login-box {
+  background-color: #f8f4f4;
+  padding: 50px 60px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  width: 400px;
+  border: 1px solid #dcdcdc;
+}
+
+/* ===== Labels ===== */
+label {
+  font-weight: bold;
+  color: #000;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* ===== Inputs ===== */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #4a6eff;
+  
+}
+
+/* ===== Botão ===== */
+button {
+  width: 107%;
+  padding: 15px 0;
+  background-color: #004badba;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+
+
+/* ===== Mensagem de erro ===== */
+.erro-msg {
+  color: red;
+  font-size: 14px;
+  margin-top: -15px;
+  margin-bottom: 15px;
+}
+
+.senha-container {
+  position: relative;
+  width: 107%;
+}
+
+.senha-container input {
+  width: 100%;
+  padding-right: 10px; /* Espaço para o botão */
+  box-sizing: border-box;
+}
+
+.show-password-btn {
+  position: absolute;
+  top: 40%;
+  right: -15px;   /* distância da borda direita */
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 20%;
+  padding: 15px 0;
+ 
+}
+

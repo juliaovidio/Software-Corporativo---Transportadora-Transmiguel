@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Veículo</title>
+  <link rel="stylesheet" href="../css/adicionar_veiculo.css">
+</head>
+<body>
+  <!-- Menu lateral -->
+  <%- include('partials/menu_lateral') %>
+
+  <!-- Conteúdo principal centralizado -->
+  <main class="main-content">
+    <!-- Título principal -->
+    <h1 class="titulo">Adicionar Veículo</h1>
+
+    <!-- Formulário de veículos -->
+    <form action="/veiculos" method="POST" class="form-veiculo">
+      <div class="campo-linha">
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" name="modelo" required>
+      </div>
+
+      <div class="campo-linha">
+        <label for="placa">Placa:</label>
+        <input type="text" id="placa" name="placa" required>
+      </div>
+
+      <div class="campo-linha">
+        <label for="ano">Ano:</label>
+        <input type="number" id="ano" name="ano" min="1900" max="2099" required>
+
+        <label for="capacidade">Capacidade:</label>
+        <input type="text" id="capacidade" name="capacidade" required>
+      </div>
+
+      <div class="campo-linha">
+        <label for="revisao_km">Revisão km:</label>
+        <input type="number" id="revisao_km" name="revisao_km" required>
+
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="status">
+      </div>
+
+      <!-- Botões -->
+      <div class="botoes">
+        <button type="submit" class="btn-salvar">Salvar informações</button>
+        <a href="/veiculos" class="btn-voltar">Voltar</a>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

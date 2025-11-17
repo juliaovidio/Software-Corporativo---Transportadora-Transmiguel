@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Rota</title>
+  <link rel="stylesheet" href="../css/adicionar_rota.css">
+  
+</head>
+<body>
+  <%- include('partials/menu_lateral') %>
+
+  <main class="main-content">
+    <h1 class="titulo">Adicionar Rota</h1>
+
+    <form action="/rotas" method="POST" class="form-rota">
+
+      <div class="campo-linha">
+        <label for="endereco_origem">Endereço Origem:</label>
+        <input type="text" id="endereco_origem" name="endereco_origem" required>
+        <label for="endereco_destino">Endereço Destino:</label>
+        <input type="text" id="endereco_destino" name="endereco_destino" required>
+      </div>
+
+
+      <div class="campo-linha">
+        <label for="distancia">Distância (km):</label>
+        <input type="number" id="distancia" name="distancia" step="0.1" required>
+         <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" required>
+      </div>
+
+    
+
+      <div class="campo-linha">
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" required>
+         <label for="frequencia">Frequência:</label>
+        <input type="text" id="frequencia" name="frequencia" required>
+      </div>
+
+      <div class="campo-linha">
+        <label for="hora_saida">Hora Saída:</label>
+        <input type="time" id="hora_saida" name="hora_saida" required>
+        <label for="hora_chegada">Hora Chegada:</label>
+        <input type="time" id="hora_chegada" name="hora_chegada" required>
+      </div>
+
+      <div class="campo-linha ">
+        <label for="tipo">Tipo:</label>
+        <input type="text" id="tipo" name="tipo" required>
+        <label for="funcionario">Funcionário:</label>
+        <input type="text" id="funcionario" name="funcionario" autocomplete="off" required>
+        <div id="sugestoes-func" class="suggestions"></div>
+
+       
+      </div>
+
+      <!-- Veículo -->
+      <div class="campo-linha">
+        <label for="modelo">Modelo do Veículo:</label>
+        <input type="text" id="modelo" name="modelo" autocomplete="off" required>
+        <div id="sugestoes-veic" class="suggestions"></div>
+        <label for="placa">Placa:</label>
+        <input type="text" id="placa" name="placa" readonly>
+      </div>
+
+
+      <div class="botoes">
+        <button type="submit" class="btn-salvar">Salvar</button>
+        <a href="/rotas" class="btn-voltar">Voltar</a>
+      </div>
+    </form>
+  </main>
+
+
+  
+  <script src="/js/adicionar_rota.js"></script>
+
+</body>
+</html>

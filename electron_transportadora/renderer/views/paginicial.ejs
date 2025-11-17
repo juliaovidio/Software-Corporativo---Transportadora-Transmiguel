@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Inicial</title>
+  <link rel="stylesheet" href="../css/paginicial.css">
+  
+</head>
+<body>
+
+
+  <!-- Menu lateral -->
+  <%- include('partials/menu_lateral') %>
+
+  <!-- Conteúdo principal -->
+  <div class="main-content">
+    <h1>Atividades Recentes</h1>
+
+    <div class="atividades-container">
+      <% if (atividades && atividades.length > 0) { %>
+        <% atividades.forEach(atividade => { %>
+          <div class="card">
+            <p><strong>Descrição:</strong> <%= atividade.descricao %></p>
+            <p><strong>Frequência:</strong> <%= atividade.frequencia %></p>
+            <p><strong>Hora de Saída:</strong> <%= atividade.hora_saida %></p>
+            <p><strong>Origem:</strong> <%= atividade.endereco_origem %></p>
+            <p><strong>Destino:</strong> <%= atividade.endereco_destino %></p>
+            <p><strong>Veículo:</strong> <%= atividade.modelo_veiculo %></p>
+            <p><strong>Funcionário:</strong> <%= atividade.nome_funcionario %></p>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>Nenhuma atividade encontrada.</p>
+      <% } %>
+    </div>
+  </div>
+
+</body>
+</html>

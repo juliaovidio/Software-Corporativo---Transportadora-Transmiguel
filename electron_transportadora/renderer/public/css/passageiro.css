@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  background: #f5f5f5; /* cor neutra na sidebar */
+}
+
+.main-content {
+  flex: 1;
+  padding: 100px;
+  background: linear-gradient(to bottom, #f8f8f8, #004bad46); /* degradê aplicado aqui */
+  overflow-y: auto;
+}
+
+/* Estilo para títulos de nível 2 */
+h1 {
+  font-weight: bold; /* Define o título como negrito */
+  text-align: center; /* centraliza horizontalmente */
+  font-size: 40px;
+  margin-top: 0;       /* tira espaço extra em cima */
+  padding-top: 0px;
+}
+
+/* Botão para cadastrar */
+.btn-cadastrar {
+  padding: 20px 35px; /* Espaçamento interno vertical e horizontal */
+  background: #3328a7; /* Cor de fundo roxa */
+  color: white; /* Cor do texto branca */
+  border-radius: 6px; /* Cantos arredondados */
+  text-decoration: none; /* Remove sublinhado */
+  font-weight: bold; /* Texto em negrito */
+}
+
+/* Efeito ao passar o mouse sobre o botão cadastrar */
+.btn-cadastrar:hover {
+  background: #218838; /* Muda a cor de fundo ao passar o mouse */
+}
+
+/* Container principal para os cartões de clientes */
+.clientes-container {
+  display: flex; /* Coloca os itens em linha */
+  flex-wrap: wrap; 
+  width: 300px;     /* largura fixa */
+  height: 200px;    /* altura fixa */ /* Define layout flexível */
+  flex-direction: column; /* Organiza os elementos em coluna */
+  gap: 20px; /* Espaçamento entre os elementos filhos */
+}
+
+/* Estilo para cada cartão de cliente */
+.cliente-card {
+  background: white; /* Cor de fundo branca */
+  border-radius: 12px; /* Cantos arredondados */
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1); /* Sombra suave */
+  padding: 20px; /* Espaçamento interno */
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+/* Estilo para parágrafos dentro do cartão */
+.cliente-card p {
+  margin: 5px 0; /* Margem vertical pequena */
+}
+
+/* Seção de ações (botões) dentro do cartão */
+.acoes {
+  margin-top: 15px; /* Espaço acima da seção de ações */
+}
+
+/* Estilo geral para botões de editar e excluir */
+.btn-editar, .btn-excluir {
+  padding: 6px 12px; /* Espaçamento interno */
+  border-radius: 6px; /* Cantos arredondados */
+  text-decoration: none; /* Remove sublinhado */
+  font-weight: bold; /* Texto em negrito */
+  margin-right: 10px; /* Espaço à direita entre botões */
+}
+
+/* Botão de editar */
+.btn-editar {
+  background: #1f68b6; /* Cor azul */
+  color: white; /* Texto branco */
+}
+
+/* Efeito hover no botão editar */
+.btn-editar:hover {
+  background: #0069d9; /* Azul mais forte ao passar o mouse */
+}
+
+/* Botão de excluir */
+.btn-excluir {
+  background: #dc3545; /* Cor vermelha */
+  color: white; /* Texto branco */
+}
+
+/* Efeito hover no botão excluir */
+.btn-excluir:hover {
+  background: #c82333; /* Vermelho mais forte ao passar o mouse */
+}
+
+/* Formulário de busca */
+.search-form {
+  margin-bottom: 25px; /* Espaço abaixo do formulário */
+  display: flex; /* Layout flexível */
+  gap: 5px; /* Espaço entre input e botão */
+  justify-content: center;  /* centraliza horizontalmente */
+  align-items: center;      /* centraliza verticalmente */
+  margin-top: 20px;         /* distância do topo */
+}
+
+/* Campo de input do formulário de busca */
+.search-form input {
+  padding: 15px; /* Espaçamento interno */
+  border-radius: 5px; /* Cantos arredondados */
+  border: 1px solid #ccc; /* Borda cinza clara */
+  padding: 10px 150px; /* Espaçamento interno */
+ 
+}
+
+/* Botão do formulário de busca */
+.search-form button {
+  padding: 10px 10px; /* Espaçamento interno */
+  background: #004aad; /* Cor azul escura */
+  color: white; /* Texto branco */
+  border: none; /* Remove borda */
+  border-radius: 5px; /* Cantos arredondados */
+  cursor: pointer; /* Cursor muda para mãozinha */
+}
+
+/* Efeito hover no botão de busca */
+.search-form button:hover {
+  background: #003080; /* Azul ainda mais escuro ao passar o mouse */
+}
+/* Layout principal: menu lateral + conteúdo */
+.page-container {
+  display: flex;
+  height: 100vh;
+}
+
+
+/* Cabeçalho da lista */
+.header-pass {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.alert-error {
+  background-color: #f8d7da;
+  color: #842029;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 15px 0;
+  border: 1px solid #f5c2c7;
+  text-align: center;
+  font-weight: bold;
+}

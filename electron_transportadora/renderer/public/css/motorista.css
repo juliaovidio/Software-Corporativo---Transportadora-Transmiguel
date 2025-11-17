@@ -1,0 +1,125 @@
+/* === ESTILO GERAL DO CORPO === */
+body {
+  margin: 0; /* Remove as margens padrão do navegador */
+  font-family: Arial, sans-serif;
+  display: flex; /* Usa o modelo flexbox para estruturar o layout (menu + conteúdo) */
+  height: 100vh; /* Faz o corpo ocupar 100% da altura da tela */
+  background: linear-gradient(to bottom right, #eef1ff, #cfd9ff); /* Degradê suave de azul claro */
+  color: #222; /* Cor padrão do texto: cinza escuro para boa leitura */
+}
+
+/* === CONTEÚDO PRINCIPAL === */
+.main-content {
+  flex: 1; /* Faz o conteúdo ocupar todo o espaço disponível ao lado do menu */
+  padding: 40px 30px; /* Espaçamento interno (superior/inferior e laterais) */
+  display: flex;               /* organiza título + cards */
+  flex-direction: column;      /* um abaixo do outro */
+  overflow-y: auto; /* Adiciona rolagem vertical se o conteúdo for maior que a tela */
+}
+
+/* === TÍTULO PRINCIPAL === */
+.main-content h1 {
+  font-size: 45px; /* Tamanho grande para destacar o título */
+  font-weight: 700; /* Texto em negrito forte */
+  color: #020219; /* Azul escuro para contraste com o fundo */
+  text-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Sombra leve para dar profundidade ao texto */
+  margin-bottom: 40px; /* Espaço abaixo do título */
+  letter-spacing: 0.5px; /* Espaço sutil entre letras */
+  text-align: center;          /* centraliza o texto */
+  width: 100%;                 /* ocupa toda a largura do container */
+
+}
+
+/* === CONTAINER DAS ATIVIDADES === */
+.atividades-container {
+  display: flex;               /* coloca os cards lado a lado */
+  flex-direction: row;         /* organiza na horizontal */
+  flex-wrap: wrap;             /* permite quebrar linha se faltar espaço */
+
+  align-items: flex-start;     /* alinha o topo dos cards */
+  gap: 25px;                   /* espaço entre os cards */
+  width: 100%;                 /* ocupa toda a largura da área */
+}
+
+/* === CARD DE ATIVIDADE === */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 6px solid #04ad;
+  width: 350px;                /* define uma largura fixa para os cards */
+  max-width: 100%;             /* impede que ultrapasse a tela */
+}
+
+/* Efeito de destaque ao passar o mouse */
+.card:hover {
+  transform: translateY(-3px); /* Move o card levemente para cima */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12); /* Sombra mais forte ao passar o mouse */
+}
+
+/* === TEXTO DENTRO DOS CARDS === */
+.card p {
+  margin: 8px 0; /* Espaçamento entre parágrafos */
+  font-size: 17px; /* Tamanho de texto confortável para leitura */
+  line-height: 1.5; /* Altura das linhas para evitar texto muito compacto */
+}
+
+/* Estilo para os textos em negrito (como os rótulos "Descrição", "Origem", etc.) */
+.card strong {
+  color: #333; /* Cor mais escura para dar destaque */
+}
+
+/* Formulário de busca */
+.search-form {
+  margin-bottom: 25px; /* Espaço abaixo do formulário */
+  display: flex; /* Layout flexível */
+  gap: 5px; /* Espaço entre input e botão */
+  justify-content: center;  /* centraliza horizontalmente */
+  align-items: center;      /* centraliza verticalmente */
+  margin-top: 20px;         /* distância do topo */
+}
+
+/* Campo de input do formulário de busca */
+.search-form input {
+  padding: 15px; /* Espaçamento interno */
+  border-radius: 5px; /* Cantos arredondados */
+  border: 1px solid #ccc; /* Borda cinza clara */
+  padding: 10px 150px; /* Espaçamento interno */
+ 
+}
+
+/* Botão do formulário de busca */
+.search-form button {
+  padding: 10px 10px; /* Espaçamento interno */
+  background: #004aad; /* Cor azul escura */
+  color: white; /* Texto branco */
+  border: none; /* Remove borda */
+  border-radius: 5px; /* Cantos arredondados */
+  cursor: pointer; /* Cursor muda para mãozinha */
+}
+
+/* Efeito hover no botão de busca */
+.search-form button:hover {
+  background: #003080; /* Azul ainda mais escuro ao passar o mouse */
+}
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) { /* Aplica regras quando a tela for menor que 768px (celulares/tablets) */
+  body {
+    flex-direction: column; /* Muda o layout para coluna (menu em cima, conteúdo embaixo) */
+  }
+
+  .main-content {
+    padding: 20px; /* Reduz o espaçamento interno para telas menores */
+  }
+
+  .main-content h1 {
+    font-size: 26px; /* Diminui o tamanho do título */
+    text-align: center; /* Centraliza o título no modo mobile */
+  }
+
+  .card {
+    padding: 20px; /* Diminui o espaçamento interno dos cards */
+  }
+}

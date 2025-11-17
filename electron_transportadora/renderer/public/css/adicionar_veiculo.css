@@ -1,0 +1,153 @@
+/* === ESTILO GERAL DO CORPO === */
+body {
+  margin: 0; /* Remove a margem padrão do navegador para que o layout ocupe toda a tela */
+  font-family: Arial, sans-serif; /* Define a fonte principal como Arial, com fallback para sans-serif */
+  display: flex; /* Define que o body será um container flexível, útil para layouts centrais ou colunas */
+  height: 100vh; /* Faz o body ocupar toda a altura da tela */
+  background: #f5f5f5; /* Cor de fundo neutra, boa para contrastar com o formulário */
+}
+
+/* === CONTEÚDO PRINCIPAL === */
+.main-content {
+  flex: 1; /* Faz o conteúdo principal ocupar todo o espaço disponível no container flex do body */
+  padding: 100px; /* Espaçamento interno ao redor do conteúdo */
+  background: linear-gradient(to bottom, #f8f8f8, #004bad46); /* Aplica um degradê sutil de topo para baixo */
+  overflow-y: auto; /* Permite rolagem vertical se o conteúdo ultrapassar a altura */
+  align-items: center; /* Centraliza os elementos filhos horizontalmente (só funciona se display for flex, e aqui falta 'display: flex') */
+  justify-content: center; /* Centraliza verticalmente (mesmo ponto de cima) */
+}
+
+/* Nota: para centralizar corretamente o formulário, seria ideal adicionar "display: flex" aqui:
+.main-content {
+  display: flex;
+} */
+
+/* === TÍTULO PRINCIPAL === */
+.titulo {
+  margin: 0 0 50px 0; /* Remove margens laterais e superior, mantém 50px de espaço abaixo */
+  font-size: 50px; /* Tamanho grande para destaque */
+  font-weight: 600; /* Negrito moderado */
+  line-height: 1.2; /* Espaçamento entre linhas */
+  text-align: center; /* Centraliza horizontalmente */
+  white-space: nowrap; /* Evita quebra de linha */
+  overflow: hidden; /* Esconde o conteúdo que ultrapassa o container */
+  text-overflow: ellipsis; /* Adiciona "..." se o texto for maior que a largura disponível */
+}
+
+/* === FORMULÁRIO DE VEÍCULOS === */
+.form-veiculo {
+  background: #f9f9ff; /* Cor clara de fundo do formulário */
+  border: 1px solid #c9c9d8; /* Borda sutil para delimitar o formulário */
+  border-radius: 20px; /* Cantos arredondados */
+  padding: 30px; /* Espaçamento interno */
+  width: 90%; /* Ocupa 90% do container pai, respeitando max-width */
+  margin: 50px auto; /* 50px de espaço em cima e embaixo + centraliza horizontal */
+  max-width: 800px; /* Largura máxima para não estourar em telas grandes */
+  min-height: 330px; /* Altura mínima */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar do fundo */
+  display: flex; /* Permite organizar campos em coluna */
+  flex-direction: column; /* Coloca os campos em coluna */
+  gap: 20px; /* Espaçamento entre os campos */
+}
+
+/* === LINHAS DE CAMPOS DO FORMULÁRIO === */
+.campo-linha {
+  display: flex; /* Coloca os inputs lado a lado */
+  gap: 18px; /* Espaçamento entre os inputs */
+  flex-wrap: wrap; /* Permite quebrar a linha em telas menores */
+}
+
+/* === LABELS === */
+label {
+  font-weight: bold; /* Destaca o texto da label */
+  font-size: 1.2em; /* Aumenta levemente o tamanho da fonte */
+}
+
+/* === INPUTS DO FORMULÁRIO === */
+input {
+  flex: 1; /* Faz o input ocupar o máximo de espaço possível dentro da linha */
+  padding: 10px; /* Espaçamento interno confortável */
+  border: 1px solid #ccc; /* Borda neutra */
+  border-radius: 8px; /* Cantos levemente arredondados */
+  min-width: 180px; /* Garante que não fique muito pequeno */
+  font-size: 1em; /* Tamanho padrão da fonte */
+}
+
+/* === SUBTÍTULOS DO FORMULÁRIO === */
+h3 {
+  font-size: 2em; /* Tamanho grande para subtítulo */
+  font-weight: 700; /* Negrito forte */
+  margin-top: 20px; /* Espaço acima do subtítulo */
+  color: #555; /* Cor cinza escura */
+}
+
+/* === CONTAINER DE BOTÕES === */
+.botoes {
+  display: flex; /* Coloca os botões lado a lado */
+  justify-content: space-between; /* Distribui os botões igualmente */
+  margin-top: 25px; /* Espaço acima do container */
+  flex-wrap: wrap; /* Quebra linha se necessário */
+  gap: 10px; /* Espaço entre os botões */
+}
+
+/* === BOTÃO SALVAR === */
+.btn-salvar {
+  background: #b1f0b1; /* Verde claro */
+  border: 1px solid #7bc67b; /* Borda verde mais escura */
+  color: black; /* Cor do texto */
+  font-weight: 700; /* Negrito */
+  padding: 10px 15px; /* Espaçamento interno */
+  border-radius: 6px; /* Cantos arredondados */
+  cursor: pointer; /* Mostra o cursor de clique */
+  transition: 0.3s; /* Animação suave para hover */
+  font-size: 1.1em; /* Fonte maior */
+}
+
+.btn-salvar:hover {
+  background: #98e598; /* Verde mais intenso ao passar o mouse */
+}
+
+/* === BOTÃO VOLTAR === */
+.btn-voltar {
+  background: #e5a9a9; /* Vermelho claro */
+  color: black; /* Cor do texto */
+  font-weight: bold; /* Negrito */
+  text-decoration: none; /* Remove sublinhado */
+  padding: 10px 15px; /* Espaçamento interno */
+  border-radius: 6px; /* Cantos arredondados */
+  border: 1px solid #b77f7f; /* Borda vermelha mais escura */
+  transition: 0.3s; /* Animação suave */
+  font-size: 1.1em; /* Fonte maior */
+  text-align: center; /* Centraliza o texto */
+  line-height: 50px; /* Altura da linha para alinhar verticalmente */
+}
+
+.btn-voltar:hover {
+  background: #d98f8f; /* Vermelho mais intenso ao passar o mouse */
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 800px) {
+  .titulo {
+    font-size: 36px; /* Reduz o tamanho do título em telas menores */
+  }
+
+  .form-veiculo {
+    width: 95%; /* Ajusta a largura do formulário */
+    padding: 20px; /* Menos padding para caber na tela */
+  }
+
+  input {
+    font-size: 0.9em; /* Fonte menor nos inputs */
+  }
+
+  h3 {
+    font-size: 1.5em; /* Subtítulo menor */
+  }
+
+  .btn-salvar,
+  .btn-voltar {
+    font-size: 1em; /* Botões menores */
+    padding: 12px 20px; /* Ajusta o padding */
+  }
+}

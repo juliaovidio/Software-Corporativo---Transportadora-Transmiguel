@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/veiculos.css">
+  <title>Veículos</title>
+</head>
+<body>
+
+  <!-- Menu lateral -->
+  <%- include('partials/menu_lateral') %>
+
+  <!-- Conteúdo principal -->
+  <div class="main-content">
+    <div class="header-pass">
+      <h1>Lista de Veículos</h1>
+      <a href="/veiculos/adicionar" class="btn-cadastrar">Cadastrar Novo Veículo</a>
+    </div>
+
+    <!-- Barra de pesquisa -->
+    <form action="/veiculos" method="GET" class="search-form">
+      <input 
+        type="text" 
+        name="q" 
+        placeholder="Pesquisar veículo..." 
+        value="<%= typeof q !== 'undefined' ? q : '' %>">
+      <button type="submit">Buscar</button>
+    </form>
+
+    <!-- Mensagem de erro (exclusão falhou) -->
+    <% if (erro) { %>
+      <div class="alert-error">
+        ⚠️ Não foi possível deletar o veículo. Ele pode estar vinculado a uma rota.
+      </div>
+    <% } %>
+
+    <!-- Cards de veículos -->
+    <div class="clientes-container">
+      <% if (veiculos && veiculos.length > 0) { %>
+        <% veiculos.forEach(veiculo => { %>
+          <div class="cliente-card">
+            <p><strong>Modelo:</strong> <%= veiculo.modelo %></p>
+            <p><strong>Ano:</strong> <%= veiculo.ano %></p>
+            <p><strong>Placa:</strong> <%= veiculo.placa %></p>
+            <p><strong>Capacidade:</strong> <%= veiculo.capacidade %></p>
+            <p><strong>Revisão (KM):</strong> <%= veiculo.revisao_km %></p>
+            <p><strong>Status:</strong> <%= veiculo.status %></p>
+
+            <div class="acoes">
+              <!-- Botão Editar -->
+              <a href="/veiculos/editar/<%= veiculo.idVeiculos %>" class="btn-editar">Editar</a>
+
+              <!-- Botão Excluir -->
+              <form 
+                action="/veiculos/<%= veiculo.idVeiculos %>/delete" 
+                method="POST" 
+                style="display:inline;">
+                <button 
+                  type="submit" 
+                  class="btn-excluir"
+                  onclick="return confirm('Tem certeza que deseja deletar este veículo?');">
+                  Excluir
+                </button>
+              </form>
+            </div>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>Nenhum veículo encontrado.</p>
+      <% } %>
+    </div>
+  </div>
+
+</body>
+</html>

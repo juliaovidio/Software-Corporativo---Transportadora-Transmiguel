@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Adicionar Financeiro</title>
+  <link rel="stylesheet" href="../css/financeiro_inicial.css">
+</head>
+<body>
+  <%- include('partials/menu_lateral') %>
+  <main class="main-content">
+    <h1 class="titulo">Adicionar Financeiro</h1>
+
+  <div class="container">
+    <p><strong>Escolha o tipo de financeiro:</strong></p>
+
+    <div class="opcoes">
+       <button class="opcao" onclick="window.location.href='/financeiro_rota'">
+        Financeiro de Rotas
+      </button>
+
+      <button class="opcao" onclick="window.location.href='/financeiro_passageiro'">
+        Financeiro de Passageiros
+      </button>
+
+    </div>
+
+  </div>
+
+  <button class="voltar" onclick="history.back()">Voltar</button>
+  </main>
+</body>
+</html>

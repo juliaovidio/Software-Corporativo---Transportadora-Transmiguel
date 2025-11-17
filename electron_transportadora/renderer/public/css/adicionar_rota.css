@@ -1,0 +1,248 @@
+
+body {
+  margin: 0; /* Remove a margem padrão do navegador para que o layout ocupe toda a tela */
+  font-family: Arial, sans-serif; /* Define a fonte principal como Arial, com fallback para sans-serif */
+  display: flex; /* Define que o body será um container flexível, útil para layouts centrais ou colunas */
+  height: 100vh; /* Faz o body ocupar toda a altura da tela */
+  background: #f5f5f5; /* Cor de fundo neutra, boa para contrastar com o formulário */
+}
+
+/* === CONTEÚDO PRINCIPAL === */
+.main-content {
+  flex: 1; /* Faz o conteúdo principal ocupar todo o espaço disponível no container flex do body */
+  padding: 80px; /* Espaçamento interno ao redor do conteúdo */
+  background: linear-gradient(to bottom, #f8f8f8, #004bad46); /* Aplica um degradê sutil de topo para baixo */
+  overflow-y: auto; /* Permite rolagem vertical se o conteúdo ultrapassar a altura */
+  align-items: center; /* Centraliza os elementos filhos horizontalmente (só funciona se display for flex, e aqui falta 'display: flex') */
+  justify-content: center; /* Centraliza verticalmente (mesmo ponto de cima) */
+}
+
+/* Nota: para centralizar corretamente o formulário, seria ideal adicionar "display: flex" aqui:
+.main-content {
+  display: flex;
+} */
+
+/* === TÍTULO PRINCIPAL === */
+.titulo {
+  margin: 0 0 30px 0; /* Remove margens laterais e superior, mantém 50px de espaço abaixo */
+  font-size: 45px; /* Tamanho grande para destaque */
+  font-weight: 600; /* Negrito moderado */
+  line-height: 1.2; /* Espaçamento entre linhas */
+  text-align: center; /* Centraliza horizontalmente */
+  white-space: nowrap; /* Evita quebra de linha */
+  overflow: hidden; /* Esconde o conteúdo que ultrapassa o container */
+  text-overflow: ellipsis; /* Adiciona "..." se o texto for maior que a largura disponível */
+}
+
+/* === FORMULÁRIO DE VEÍCULOS === */
+.form-rota {
+  background: #f9f9ff; /* Cor clara de fundo do formulário */
+  border: 1px solid #c9c9d8; /* Borda sutil para delimitar o formulário */
+  border-radius: 20px; /* Cantos arredondados */
+  padding: 30px; /* Espaçamento interno */
+  width: 80%; /* Ocupa 90% do container pai, respeitando max-width */
+  margin: 40px auto; /* 50px de espaço em cima e embaixo + centraliza horizontal */
+  max-width: 830px; /* Largura máxima para não estourar em telas grandes */
+  min-height: 250px; /* Altura mínima */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar do fundo */
+  display: flex; /* Permite organizar campos em coluna */
+  flex-direction: column; /* Coloca os campos em coluna */
+  gap: 10px; /* Espaçamento entre os campos */
+  font-size: 15px; /* Tamanho grande para destaque */
+}
+
+/* === LINHAS DE CAMPOS DO FORMULÁRIO === */
+.campo-linha {
+  display: flex; /* Coloca os inputs lado a lado */
+  gap: 18px; /* Espaçamento entre os inputs */
+  flex-wrap: wrap; /* Permite quebrar a linha em telas menores */
+  position: relative; /* <-- adiciona isto */
+}
+
+.suggestions:empty {
+  display: none;
+}
+
+/* === LABELS === */
+label {
+  font-weight: bold; /* Destaca o texto da label */
+  font-size: 1.2em; /* Aumenta levemente o tamanho da fonte */
+}
+
+/* === INPUTS DO FORMULÁRIO === */
+input {
+  flex: 1; /* Faz o input ocupar o máximo de espaço possível dentro da linha */
+  padding: 7px; /* Espaçamento interno confortável */
+  border: 1px solid #ccc; /* Borda neutra */
+  border-radius: 8px; /* Cantos levemente arredondados */
+  min-width: 180px; /* Garante que não fique muito pequeno */
+  font-size: 1em; /* Tamanho padrão da fonte */
+}
+
+/* === SUBTÍTULOS DO FORMULÁRIO === */
+h3 {
+  font-size: 1.8em; /* Tamanho grande para subtítulo */
+  font-weight: 700; /* Negrito forte */
+  margin-top: 20px; /* Espaço acima do subtítulo */
+  color: #555; /* Cor cinza escura */
+}
+
+
+/* =========================
+   INPUTS
+   ========================= */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"] {
+  flex: 1; /* Ocupa espaço disponível */
+  padding: 7px 20px; /* Espaçamento interno */
+  border: 1px solid #ccc; /* Borda neutra */
+  border-radius: 8px; /* Cantos arredondados */
+  font-size: 1em; /* Fonte padrão */
+  min-width: 160px; /* Evita inputs muito pequenos */
+  transition: all 0.3s ease; /* Animação suave ao focar */
+}
+
+input:focus {
+  border-color: #004bad; /* Borda azul ao focar */
+  box-shadow: 0 0 0 3px rgba(0, 75, 173, 0.2); /* Sombra leve */
+  outline: none; /* Remove contorno padrão */
+}
+
+/* =========================
+   BOTÕES
+   ========================= */
+.botoes {
+  display: flex; /* Lado a lado */
+  justify-content: space-between; /* Distribuição igual */
+  flex-wrap: wrap; /* Quebra linha se necessário */
+  gap: 10px; /* Espaçamento entre botões */
+  margin-top: 25px; /* Espaço acima */
+}
+
+/* === BOTÃO SALVAR === */
+.btn-salvar {
+  background: #b1f0b1; /* Verde claro */
+  border: 1px solid #7bc67b; /* Borda verde mais escura */
+  color: black; /* Cor do texto */
+  font-weight: 700; /* Negrito */
+  padding: 8px 15px; /* Espaçamento interno */
+  border-radius: 6px; /* Cantos arredondados */
+  cursor: pointer; /* Mostra o cursor de clique */
+  transition: 0.3s; /* Animação suave para hover */
+  font-size: 1.0em; /* Fonte maior */
+}
+
+
+.btn-salvar:hover {
+  background: #98e598; /* Verde mais intenso */
+}
+
+.btn-voltar {
+  background: #e5a9a9; /* Vermelho claro */
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  border: 1px solid #b77f7f;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.btn-voltar:hover {
+  background: #d98f8f; /* Vermelho mais intenso */
+}
+
+/* =========================
+   SELECT PERSONALIZADO (TIPO)
+   ========================= */
+#tipo {
+  appearance: none; /* Remove estilo nativo */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 35px 8px 10px;
+  font-size: 1em;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23004bad' height='24' viewBox='0 0 24 24' width='24'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#tipo:hover {
+  border-color: #7cb8ff; /* Azul claro */
+  background-color: #f5faff; /* Fundo leve azul */
+}
+
+#tipo:focus {
+  border-color: #004bad; /* Azul escuro */
+  box-shadow: 0 0 0 3px rgba(0,75,173,0.2);
+  outline: none;
+}
+
+/* =========================
+   SUGESTÕES (autocomplete)
+   ========================= */
+.suggestions {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 5px;
+  max-height: 120px; /* Limita altura */
+  overflow-y: auto; /* Scroll vertical */
+  position: absolute; /* Posiciona em relação ao pai */
+  width: calc(100% - 20px); /* Largura igual ao input */
+  z-index: 10; /* Fica acima de outros elementos */
+}
+
+/* =========================
+   CAMPOS ESPECÍFICOS
+   ========================= */
+#placa[readonly] {
+  background-color: #eaeaea; /* Cinza claro */
+  cursor: not-allowed; /* Indica que não é editável */
+}
+
+/* =========================
+   SUBTÍTULOS
+   ========================= */
+h3 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-top: 20px;
+  color: #555;
+}
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+@media (min-width: 768px) {
+  .campo-linha {
+    flex-wrap: nowrap; /* Em telas maiores, mantém inputs na mesma linha */
+  }
+
+  .form-rota {
+    gap: 20px; /* Mais espaço entre os campos */
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 32px; /* Reduz título em telas pequenas */
+  }
+
+  .campo-linha label {
+    min-width: 100%; /* Labels ocupam toda a linha */
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  input[type="time"] {
+    min-width: 100%; /* Inputs ocupam toda a linha */
+  }
+  
+}

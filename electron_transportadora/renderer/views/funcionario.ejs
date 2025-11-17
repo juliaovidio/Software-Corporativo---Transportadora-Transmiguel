@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Funcionários</title>
+  <link rel="stylesheet" href="../css/funcionarios.css">
+</head>
+
+<body>
+  <%- include('partials/menu_lateral') %>
+
+  <div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2>Lista de Funcionários</h2>
+    </div>
+
+    <div class="funcionarios-container">
+      <% listaFuncionarios.forEach(funcionario => { %>
+        
+        <div class="funcionario-card">
+          <p><strong>Nome:</strong> <%= funcionario.nome %></p>
+          <p><strong>CPF:</strong> <%= funcionario.cpf %></p>
+          <p><strong>Email:</strong> <%= funcionario.email %></p>
+          <p><strong>Telefone:</strong> <%= funcionario.telefone %></p>
+
+          <% if (funcionario.cargo_tipo) { %>
+            <p><strong>Cargo:</strong> <%= funcionario.cargo_tipo %></p>
+          <% } else { %>
+            <p><strong>ID do Cargo:</strong> <%= funcionario.cargo_idCargo %></p>
+          <% } %>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>

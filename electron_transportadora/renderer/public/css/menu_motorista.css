@@ -1,0 +1,121 @@
+/* === ESTILO GERAL DO CORPO === */
+/* === ESTILO GERAL DO CORPO === */
+body {
+  margin: 0; /* Remove as margens padrão do navegador */
+  font-family: Arial, sans-serif; /* Define a fonte principal da página */
+  display: flex; /* Organiza o conteúdo principal em layout flexível (lado a lado) */
+  height: 100vh; /* Faz o corpo ocupar 100% da altura da tela */
+  background: linear-gradient(to bottom, #f8f8f8, #004bad46); /* Aplica um degradê de cima para baixo no fundo */
+}
+
+/* === BARRA LATERAL (SIDEBAR) === */
+.sidebar {
+  width: 220px; /* Define a largura fixa da barra lateral */
+  background: #f5f5f5; /* Cor de fundo clara para a sidebar */
+  padding: 20px 0; /* Espaçamento interno vertical (em cima e embaixo) */
+  display: flex; /* Usa flexbox para alinhar os elementos internos */
+  flex-direction: column; /* Organiza os itens da sidebar em coluna */
+  align-items: center; /* Centraliza os elementos horizontalmente */
+  border-right: 1px solid #ccc; /* Linha divisória entre a sidebar e o conteúdo principal */
+}
+
+
+/* === LOGO DA SIDEBAR === */
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo span {
+  color: #004aad;
+}
+
+/* === FOTO DE PERFIL === */
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  background: #ddd;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 2px solid #004aad; /* Adiciona borda azul ao redor da foto */
+  object-fit: cover; /* Ajusta a imagem para cobrir totalmente o círculo */
+  top: 150px;
+  position: relative;
+}
+
+.user-info {
+  background: #f0f3ff; /* Fundo suave azul-claro */
+  border: 1px solid #c9d1f7; /* Borda leve */
+  border-radius: 10px; /* Cantos arredondados */
+  padding: 1px 6px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o texto */
+  width: 80%; /* Mantém uma margem lateral dentro da sidebar */
+  margin-bottom: 20px; /* Espaço abaixo do bloco */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+ top: 150px;
+  position: relative;
+}
+
+/* Nome do funcionário */
+.user-info strong {
+  font-size: 15px; /* Tamanho maior */
+  color: #004aad; /* Azul igual ao do logo */
+  display: block; /* Ocupa linha inteira */
+  margin-bottom: 5px; /* Espaço entre nome e cargo */
+}
+
+/* Cargo do funcionário */
+.user-info em {
+  font-size: 13px; /* Um pouco menor que o nome */
+  color: #555; /* Cinza suave */
+  font-style: italic; /* Mantém o estilo itálico */
+   font-weight: bold; /* Deixa o texto em negrito */
+
+}
+/* === MENU DE NAVEGAÇÃO === */
+.menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  padding: 10px 0;
+  width: 90%;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 8px;
+}
+
+.menu a:hover {
+  background: #004aad;
+  color: #fff;
+}
+
+/* === BOTÃO DE SAIR (LOGOUT) === */
+.logout {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.logout button {
+  background: #f8b7b7;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.logout button:hover {
+  background: #e68989;
+}

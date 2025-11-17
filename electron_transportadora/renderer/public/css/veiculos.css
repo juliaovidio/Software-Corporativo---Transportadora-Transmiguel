@@ -1,0 +1,141 @@
+/* === ESTILO GERAL DO CORPO === */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  background: #f5f5f5; /* cor neutra na sidebar */
+}
+
+/* === CONTEÚDO PRINCIPAL === */
+.main-content {
+  flex: 1;
+  padding: 100px;
+  background: linear-gradient(to bottom, #f8f8f8, #004bad46); /* degradê aplicado aqui */
+  overflow-y: auto;
+}
+
+/* === TÍTULO PRINCIPAL === */
+h1 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* === BOTÃO CADASTRAR === */
+.btn-cadastrar {
+  padding: 20px 35px;
+  background: #3328a7;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-cadastrar:hover {
+  background: #218838;
+}
+
+/* === CONTAINER DOS CARDS === */
+/* Container principal para os cartões de clientes */
+.clientes-container {
+  display: flex; /* Coloca os itens em linha */
+  flex-wrap: wrap; 
+  width: 300px;     /* largura fixa */
+  height: 200px;    /* altura fixa */ /* Define layout flexível */
+  flex-direction: column; /* Organiza os elementos em coluna */
+  gap: 20px; /* Espaçamento entre os elementos filhos */
+}
+
+/* === CARD INDIVIDUAL === */
+/* Estilo para cada cartão de cliente */
+.cliente-card {
+  background: white; /* Cor de fundo branca */
+  border-radius: 12px; /* Cantos arredondados */
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1); /* Sombra suave */
+  padding: 20px; /* Espaçamento interno */
+  text-align: left; /* Alinha o texto à esquerda */
+}
+/* === TEXTO DENTRO DOS CARDS === */
+.cliente-card p {
+  margin: 5px 0;
+}
+
+/* === AÇÕES (BOTÕES EDITAR / EXCLUIR) === */
+.acoes {
+  margin-top: 15px;
+}
+
+.btn-editar, .btn-excluir {
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Botão Editar */
+.btn-editar {
+  background: #1f68b6;
+  color: white;
+}
+.btn-editar:hover {
+  background: #0069d9;
+}
+
+/* Botão Excluir */
+.btn-excluir {
+  background: #dc3545;
+  color: white;
+}
+.btn-excluir:hover {
+  background: #c82333;
+}
+
+/* === FORMULÁRIO DE BUSCA === */
+.search-form {
+  margin-bottom: 25px;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.search-form input {
+  padding: 10px 150px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-form button {
+  padding: 10px 10px;
+  background: #004aad;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.search-form button:hover {
+  background: #003080;
+}
+
+/* === CABEÇALHO DA LISTA (TÍTULO + BOTÃO CADASTRAR) === */
+.header-pass {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.alert-error {
+  background-color: #f8d7da;
+  color: #842029;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 15px 0;
+  border: 1px solid #f5c2c7;
+  text-align: center;
+  font-weight: bold;
+}

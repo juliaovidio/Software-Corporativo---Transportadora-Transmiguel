@@ -1,0 +1,152 @@
+/* === ESTILO GERAL DO CORPO === */
+body {
+  margin: 0; /* Remove a margem padrão do navegador */
+  font-family: Arial, sans-serif; /* Define a fonte padrão da página */
+  display: flex; /* Flexbox para alinhar elementos filhos */
+  height: 100vh; /* Ocupa toda a altura da tela */
+  background: #f5f5f5; /* Cor de fundo neutra */
+}
+
+/* === CONTEÚDO PRINCIPAL === */
+.main-content {
+  flex: 1; /* Ocupa o espaço restante */
+  padding: 100px; /* Espaçamento interno ao redor do conteúdo */
+  background: linear-gradient(to bottom, #f8f8f8, #004bad46); /* Degradê de fundo */
+  overflow-y: auto; /* Barra de rolagem vertical caso necessário */
+}
+
+/* === CONTAINER PRINCIPAL DA TABELA === */
+.tabela-container {
+  width: 55%; /* Largura do container */
+  margin: 50px auto; /* Centraliza horizontalmente e margem vertical */
+  background: #ffffff; /* Fundo branco */
+  border-radius: 16px; /* Bordas arredondadas */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave */
+  overflow: hidden; /* Evita que elementos filhos ultrapassem o container */
+  border: 1px solid #e0e0e0; /* Borda fina e clara */
+}
+
+/* === TÍTULO PRINCIPAL === */
+.tabela-container h2 {
+  background: #004bad; /* Fundo azul do cabeçalho */
+  color: white; /* Cor do texto */
+  text-align: left; /* Alinha o texto à esquerda */
+  padding: 18px 25px; /* Espaçamento interno */
+  font-size: 1.4rem; /* Tamanho da fonte do título */
+  font-weight: 700; /* Negrito */
+  border-radius: 16px 16px 0 0; /* Bordas arredondadas no topo */
+  margin: 0; /* Remove margem padrão */
+}
+
+/* === FORMULÁRIO DE PESQUISA === */
+.form-pesquisa {
+  display: flex; /* Flexbox para organizar input e botão */
+  gap: 10px; /* Espaçamento entre os elementos */
+  margin: 20px 25px; /* Margem externa do formulário */
+  align-items: center; /* Alinha verticalmente os itens */
+}
+
+/* Input de pesquisa */
+.input-pesquisa {
+  flex: 1; /* Ocupa todo espaço disponível */
+  padding: 10px 14px; /* Espaçamento interno */
+  border: 1px solid #ccc; /* Borda cinza clara */
+  border-radius: 8px; /* Bordas arredondadas */
+  font-size: 15px; /* Tamanho da fonte */
+  outline: none; /* Remove contorno padrão ao focar */
+}
+
+/* Efeito ao focar no input */
+.input-pesquisa:focus {
+  border-color: #004bad; /* Muda a cor da borda */
+  box-shadow: 0 0 5px rgba(0, 75, 173, 0.2); /* Sombra suave ao redor */
+}
+
+/* Botão de pesquisa */
+.btn-pesquisar {
+  background-color: #004bad; /* Fundo azul */
+  color: white; /* Cor do texto */
+  border: none; /* Remove borda padrão */
+  padding: 10px 18px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor em forma de mão */
+  transition: background 0.3s; /* Transição suave ao mudar cor */
+  font-weight: bold; /* Texto em negrito */
+}
+
+/* Efeito hover no botão */
+.btn-pesquisar:hover {
+  background-color: #00357f; /* Fundo mais escuro ao passar o mouse */
+}
+
+/* === TABELA === */
+.tabela-financeiro {
+  width: 100%; /* Tabela ocupa 100% do container */
+  border-collapse: collapse; /* Remove espaçamento entre células */
+}
+
+/* Cabeçalhos da tabela */
+.tabela-financeiro th {
+  background: #f5f5f5; /* Fundo cinza claro */
+  color: #333; /* Cor do texto */
+  font-weight: 600; /* Negrito médio */
+  text-align: left; /* Alinha à esquerda */
+  padding: 14px 18px; /* Espaçamento interno */
+  border-bottom: 2px solid #ddd; /* Borda inferior */
+  font-size: 0.95rem; /* Tamanho da fonte */
+}
+
+/* Células da tabela */
+.tabela-financeiro td {
+  padding: 14px 18px; /* Espaçamento interno */
+  font-size: 0.95rem; /* Tamanho da fonte */
+  color: #444; /* Cor do texto */
+  border-bottom: 1px solid #eee; /* Borda inferior clara */
+}
+
+/* Linhas alternadas */
+.tabela-financeiro tr:nth-child(even) {
+  background: #fafafa; /* Cor de fundo das linhas pares */
+}
+
+/* Efeito ao passar o mouse nas linhas */
+.tabela-financeiro tr:hover {
+  background: #eaf6f4; /* Fundo verde claro */
+  transition: 0.25s ease; /* Transição suave */
+}
+
+/* === BOTÃO VOLTAR === */
+.voltar {
+  position: absolute; /* Posicionamento absoluto */
+  bottom: 40px; /* Distância da parte inferior */
+  right: 100px; /* Distância da direita */
+  background: #f4b3b3; /* Fundo rosa claro */
+  border: 1px solid #000; /* Borda preta */
+  font-weight: bold; /* Texto em negrito */
+  padding: 10px 20px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor em forma de mão */
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+  .tabela-container {
+    width: 95%; /* Ajusta a largura do container */
+    margin: 20px auto; /* Centraliza horizontalmente */
+  }
+
+  .tabela-financeiro th,
+  .tabela-financeiro td {
+    font-size: 0.85rem; /* Fonte menor para dispositivos menores */
+    padding: 10px; /* Reduz padding */
+  }
+
+  .form-pesquisa {
+    flex-direction: column; /* Input e botão em coluna */
+    align-items: stretch; /* Ocupa toda largura */
+  }
+
+  .btn-pesquisar {
+    width: 100%; /* Botão ocupa toda largura */
+  }
+}

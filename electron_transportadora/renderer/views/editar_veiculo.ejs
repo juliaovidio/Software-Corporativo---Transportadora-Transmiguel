@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Veículo</title>
+  <link rel="stylesheet" href="/css/adicionar_veiculo.css">
+</head>
+<body>
+  <!-- Menu lateral -->
+  <%- include('partials/menu_lateral') %>
+
+  <!-- Conteúdo principal -->
+  <main class="main-content">
+    <h1 class="titulo">Editar Veículo</h1>
+
+    <!-- Formulário de edição -->
+    <form action="/veiculos/editar/<%= veiculo.idVeiculos %>" method="POST" class="form-veiculo">
+      
+      <div class="campo-linha">
+        <label for="modelo">Modelo:</label>
+        <input 
+          type="text" 
+          id="modelo" 
+          name="modelo" 
+          value="<%= veiculo.modelo %>" 
+          required>
+      </div>
+
+      <div class="campo-linha">
+        <label for="placa">Placa:</label>
+        <input 
+          type="text" 
+          id="placa" 
+          name="placa" 
+          value="<%= veiculo.placa %>" 
+          required>
+      </div>
+
+      <div class="campo-linha">
+        <label for="ano">Ano:</label>
+        <input 
+          type="number" 
+          id="ano" 
+          name="ano" 
+          min="1900" 
+          max="2099" 
+          value="<%= veiculo.ano %>" 
+          required>
+
+        <label for="capacidade">Capacidade:</label>
+        <input 
+          type="text" 
+          id="capacidade" 
+          name="capacidade" 
+          value="<%= veiculo.capacidade %>" 
+          required>
+      </div>
+
+      <div class="campo-linha">
+        <label for="revisao_km">Revisão km:</label>
+        <input 
+          type="number" 
+          id="revisao_km" 
+          name="revisao_km" 
+          value="<%= veiculo.revisao_km %>" 
+          required>
+
+        <label for="status">Status:</label>
+        <input 
+          type="text" 
+          id="status" 
+          name="status" 
+          value="<%= veiculo.status %>">
+      </div>
+
+      <!-- Botões -->
+      <div class="botoes">
+        <button type="submit" class="btn-salvar">Salvar alterações</button>
+        <a href="/veiculos" class="btn-voltar">Voltar</a>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

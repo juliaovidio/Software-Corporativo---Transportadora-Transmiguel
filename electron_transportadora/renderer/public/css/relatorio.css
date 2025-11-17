@@ -1,0 +1,88 @@
+/* ======== ESTILO GERAL ======== */
+body {
+  margin: 0; /* Remove margens padrão do navegador */
+  font-family: Arial, sans-serif; /* Define a fonte padrão */
+  display: flex; /* Coloca os elementos filhos (menu + conteúdo) lado a lado */
+  height: 100vh; /* Faz o body ocupar toda a altura da tela */
+  background: #f5f5f5; /* Fundo neutro, útil para o fundo da sidebar */
+}
+
+/* ======== ÁREA PRINCIPAL (CONTEÚDO) ======== */
+.main-content {
+  flex: 1; /* Ocupa todo o espaço restante, deixando espaço fixo pro menu */
+  padding: 100px; /* Espaçamento interno (afasta o conteúdo das bordas) */
+  background: linear-gradient(to bottom, #f8f8f8, #004bad46); /* Fundo com degradê */
+  overflow-y: auto; /* Permite rolagem vertical se o conteúdo for grande */
+}
+
+.titulo {
+  margin: 0 0 50px 0; /* Remove margens laterais e superior, mantém 50px de espaço abaixo */
+  font-size: 40px; /* Tamanho grande para destaque */
+  font-weight: 600; /* Negrito moderado */
+  line-height: 1.2; /* Espaçamento entre linhas */
+  text-align: center; /* Centraliza horizontalmente */
+  white-space: nowrap; /* Evita quebra de linha */
+  overflow: hidden; /* Esconde o conteúdo que ultrapassa o container */
+  text-overflow: ellipsis; /* Adiciona "..." se o texto for maior que a largura disponível */
+}
+/* ======== CONTAINER CENTRAL ======== */
+.container {
+  background: #f5f5fa; /* Fundo claro */
+  border-radius: 15px; /* Bordas arredondadas */
+  padding: 30px; /* Espaço interno */
+  width: 600px; /* Largura fixa (centralizada por padrão) */
+  height: 200px;
+  margin: 100px 220px; /* 40px em cima/baixo e 100px nas laterais */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra leve para destacar */
+  text-align: center;
+  max-width: 600px; /* largura máxima */
+  
+/
+ 
+}
+
+/* ======== TEXTO DENTRO DO CONTAINER ======== */
+.container p {
+  font-size: 1.1rem; /* Tamanho médio */
+  font-weight: bold; /* Negrito */
+  margin-bottom: 20px; /* Espaço abaixo do texto */
+}
+
+/* ======== CONJUNTO DE BOTÕES ======== */
+.opcoes {
+  display: flex; /* Alinha os botões lado a lado */
+  justify-content: space-around; /* Espaça uniformemente os botões */
+  gap: 20px; /* Espaço entre eles */
+}
+
+/* ======== BOTÕES DE OPÇÃO ======== */
+.opcao {
+  width: 45%; /* Cada botão ocupa 45% do container (dois cabem lado a lado) */
+  padding: 25px 0; /* Altura do botão */
+  border-radius: 10px; /* Bordas arredondadas */
+  border: 1px solid #000; /* Borda preta */
+  font-weight: bold; /* Texto em negrito */
+  background-color: white; /* Fundo branco */
+  cursor: pointer; /* Mostra o cursor de clique */
+  font-size: 1rem; /* Tamanho padrão de fonte */
+  transition: 0.3s; /* Suaviza a animação no hover */
+}
+
+/* Efeito ao passar o mouse sobre os botões */
+.opcao:hover {
+  background-color: #e6e6ff; /* Leve mudança de cor no hover */
+}
+
+/* ======== BOTÃO "VOLTAR" ======== */
+.voltar {
+  position: absolute; /* Posição fixa em relação à tela */
+  bottom: 40px; /* Distância da parte inferior */
+  right: 100px; /* Distância da direita */
+  background: #f4b3b3; /* Cor rosa clara */
+  border: 1px solid #000; /* Borda preta */
+  font-weight: bold; /* Texto em negrito */
+  padding: 20px 30px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de clique */
+  font-size: 15px;;
+}

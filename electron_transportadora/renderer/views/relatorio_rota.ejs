@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financeiro - Relatório de Rotas</title>
+  <link rel="stylesheet" href="../css/relatorio_rota.css">
+</head>
+<body>
+      <%- include('partials/menu_lateral') %>
+
+  <div class="tabela-container">
+    <h2>RELATORIO - FINANCEIRO ROTAS</h2>
+
+
+
+    <!-- 🔍 Área de Pesquisa -->
+    <form method="GET" action="/relatorio_rota" class="form-pesquisa">
+      <input 
+        type="text" 
+        name="q" 
+        placeholder="Pesquisar por veículo ou rota..." 
+        value="<%= q || '' %>" 
+        class="input-pesquisa"
+      >
+      <button type="submit" class="btn-pesquisar">Buscar</button>
+    </form>
+
+    <!-- 🧾 Tabela de Relatórios -->
+    <table class="tabela-financeiro">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Veículo</th>
+          <th>Rota</th>
+          <th>Pedágio</th>
+          <th>Preço/km</th>
+          <th>Custo do Motorista</th>
+          <th>Valor Total / Passageiro (Mensal)</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% if (relatorios && relatorios.length > 0) { %>
+          <% relatorios.forEach(relatorio => { %>
+            <tr>
+              <td><%= relatorio.id %></td>
+              <td><%= relatorio.veiculo %></td>
+              <td><%= relatorio.rota %></td>
+              <td><%= relatorio.pedagio %></td>
+              <td><%= relatorio.preco_km %></td>
+              <td><%= relatorio.custo_motorista %></td>
+              <td><%= relatorio.valor_passageiro_mensal %></td>
+            </tr>
+          <% }) %>
+        <% } else { %>
+          <tr>
+            <td colspan="7" style="text-align:center; color:#777; padding:15px;">
+              Nenhum relatório encontrado.
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+   <button class="voltar" onclick="window.location.href='/relatorio'">
+  Voltar
+</button>
+  </div>
+
+</body>
+</html>

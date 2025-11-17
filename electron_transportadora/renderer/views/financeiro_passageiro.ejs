@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Financeiro Passageiro</title>
+  <link rel="stylesheet" href="../css/financeiro_passageiro.css">
+</head>
+<body>
+
+  <!-- Menu lateral -->
+  <%- include('partials/menu_lateral') %>
+
+  <div class="main-content">
+    <div class="header-pass">
+      <h1>Financeiro Passageiro</h1>
+      <button type="button" class="btn-cadastrar" onclick="window.location.href='/financeiro_passageiro/adicionar'" aria-label="Adicionar novo registro de pagamento">
+        Adicionar Novo Registro
+      </button>
+    </div>
+
+    <div class="pesquisa-container">
+      <label for="pesquisar"><strong>Pesquisar:</strong></label>
+      <input type="text" id="pesquisar" placeholder="Digite algo para buscar...">
+    </div>
+
+    <div class="financeiros-container">
+      <% pagamentos.forEach(pagamento => { %>
+        <div class="financeiro-card">
+          <p><strong>Nome:</strong> <%= pagamento.nome %></p>
+          <p><strong>Data:</strong> <%= pagamento.data.toISOString().split('T')[0] %></p>
+          <p><strong>Valor pago:</strong> R$ <%= pagamento.valor_pago.toFixed(2) %></p>
+          <p><strong>Status:</strong> <%= pagamento.status %></p>
+          <p><strong>Forma de pagamento:</strong> <%= pagamento.forma_pagamento %></p>
+
+          <div class="acoes">
+            <a href="/financeiro_passageiro/editar/<%= pagamento.idPagamento_passageiro %>" class="btn-editar">Editar</a>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+
+    <!-- Botão voltar para o relatório de passageiros -->
+    <button class="voltar" onclick="window.location.href='/financeiro'">
+      Voltar
+    </button>
+
+  </div> <!-- fecha .main-content -->
+
+</body>
+</html>

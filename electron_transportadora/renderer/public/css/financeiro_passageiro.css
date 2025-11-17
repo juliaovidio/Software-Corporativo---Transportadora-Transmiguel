@@ -1,0 +1,193 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  background: #f5f5f5; /* cor neutra na sidebar */
+}
+
+.main-content {
+  flex: 1;
+  padding: 100px;
+  background: linear-gradient(to bottom, #f8f8f8, #004bad46); /* degradê aplicado aqui */
+  overflow-y: auto;
+}
+
+/* Estilo para títulos de nível 2 */
+h1 {
+  font-weight: bold; /* Define o título como negrito */
+  text-align: center; /* centraliza horizontalmente */
+  font-size: 40px;
+  margin-top: 0;       /* tira espaço extra em cima */
+  padding-top: 0px;
+}
+
+/* Botão para cadastrar */
+.btn-cadastrar {
+  padding: 20px 35px; /* Espaçamento interno vertical e horizontal */
+  background: #3328a7; /* Cor de fundo roxa */
+  color: white; /* Cor do texto branca */
+  border-radius: 6px; /* Cantos arredondados */
+  text-decoration: none; /* Remove sublinhado */
+  font-weight: bold; /* Texto em negrito */
+}
+
+/* Efeito ao passar o mouse sobre o botão cadastrar */
+.btn-cadastrar:hover {
+  background: #218838; /* Muda a cor de fundo ao passar o mouse */
+}
+/* Botões gerais */
+.btn-cadastrar, .btn-adicionar {
+  padding: 20px 35px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Botão de adicionar/cadastrar */
+.btn-cadastrar, .btn-adicionar {
+  background: #3328a7;
+  color: #fff;
+}
+
+.btn-cadastrar:hover, .btn-adicionar:hover {
+  background: #218838;
+}
+/* Estilo geral para botões de editar e excluir */
+.btn-editar, .btn-excluir {
+  padding: 6px 12px; /* Espaçamento interno */
+  border-radius: 6px; /* Cantos arredondados */
+  text-decoration: none; /* Remove sublinhado */
+  font-weight: bold; /* Texto em negrito */
+  margin-right: 10px; /* Espaço à direita entre botões */
+}
+
+/* Botão de editar */
+.btn-editar {
+  background: #1f68b6; /* Cor azul */
+  color: white; /* Texto branco */
+}
+
+/* Efeito hover no botão editar */
+.btn-editar:hover {
+  background: #0069d9; /* Azul mais forte ao passar o mouse */
+}
+
+/* Botão de excluir */
+.btn-excluir {
+  background: #dc3545; /* Cor vermelha */
+  color: white; /* Texto branco */
+}
+
+/* Efeito hover no botão excluir */
+.btn-excluir:hover {
+  background: #c82333; /* Vermelho mais forte ao passar o mouse */
+}
+
+
+/* Formulário de busca */
+.search-form , .pesquisa-container{
+  margin-bottom: 25px; /* Espaço abaixo do formulário */
+  display: flex; /* Layout flexível */
+  gap: 5px; /* Espaço entre input e botão */
+  justify-content: center;  /* centraliza horizontalmente */
+  align-items: center;      /* centraliza verticalmente */
+  margin-top: 20px;         /* distância do topo */
+}
+
+/* Campo de input do formulário de busca */
+.search-form input, .pesquisa-container input {
+   width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+ 
+}
+
+/* Botão do formulário de busca */
+.search-form button {
+  padding: 10px 10px; /* Espaçamento interno */
+  background: #004aad; /* Cor azul escura */
+  color: white; /* Texto branco */
+  border: none; /* Remove borda */
+  border-radius: 5px; /* Cantos arredondados */
+  cursor: pointer; /* Cursor muda para mãozinha */
+}
+
+/* Efeito hover no botão de busca */
+.search-form button:hover {
+  background: #003080; /* Azul ainda mais escuro ao passar o mouse */
+}
+
+/* Container dos cartões financeiros */
+.financeiros-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Cada cartão financeiro */
+.financeiro-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.financeiro-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 15px rgba(0,0,0,0.15);
+}
+
+/* Texto dentro do cartão */
+.financeiro-card p {
+  margin: 5px 0;
+}
+
+/* Seção de ações dentro do cartão */
+.acoes {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+/* Cabeçalho da lista */
+.header-pass {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+/* === BOTÃO VOLTAR === */
+.voltar {
+  position: absolute; /* Posicionamento absoluto */
+  bottom: 40px; /* Distância da parte inferior */
+  right: 100px; /* Distância da direita */
+  background: #f4b3b3; /* Fundo rosa claro */
+  border: 1px solid #000; /* Borda preta */
+  font-weight: bold; /* Texto em negrito */
+  padding: 10px 20px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor em forma de mão */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .financeiro-card {
+    width: 100%;
+  }
+
+  .main-content {
+    padding: 20px 10px;
+  }
+}
