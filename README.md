@@ -1,7 +1,7 @@
 # Software-Corporativo---Transportadora-Transmiguel
 Foi desenvolvido um projeto de software corporativo para a empresa de transporte Transmiguel, localizada em Jacutinga–MG. O objetivo do sistema é aprimorar a organização interna, abrangendo o controle de passageiros, rotas, veículos e processos financeiros.
 
-*Desenvolvimento de Software Corporativo*
+## Desenvolvimento de Software Corporativo
 arquivo: electron_transportadora
 
 Aplicação desktop com Electron, backend em JavaScript (Node.js) e frontend com EJS. Foco em arquitetura em camadas, clareza de responsabilidades e organização de assets.
@@ -30,7 +30,7 @@ Rotas e organização do backend
 - app.js monta as rotas; controllers/ ou módulos auxiliares podem conter lógica reutilizável.
 - Validar e sanitizar entrada em routers/auth.js e endpoints que recebem formulários.
 
-*Estrutura de Dados*
+## Estrutura de Dados
 
 Implementações principais:
 - Queue (TypeScript): usada para modelar filas de passageiros e veículos (FIFO) — útil para listar/percorrer itens como um "GET" e para enfileirar processos.
@@ -42,8 +42,8 @@ Por que foi escolhido:
 - Usar essas estruturas como cache/índice junto ao banco (sincronização/invalidação).
 - Implementar limites/eviction (TTL/LRU) se o volume for grande.
 - Testar colisões e casos limites da hash table.
-- 
-*Segurança & Auditoria*
+  
+## Segurança & Auditoria
 arquivo: scrippermissoes.sql
 
 Projeto desktop corporativo (Electron) possui controle de passageiros, rotas, veículos e financeiro.
