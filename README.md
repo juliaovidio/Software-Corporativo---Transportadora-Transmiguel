@@ -1,6 +1,48 @@
 # Software-Corporativo---Transportadora-Transmiguel
 Foi desenvolvido um projeto de software corporativo para a empresa de transporte Transmiguel, localizada em Jacutinga–MG. O objetivo do sistema é aprimorar a organização interna, abrangendo o controle de passageiros, rotas, veículos e processos financeiros.
 
+## Instruções de uso
+
+Este README descreve como configurar o ambiente de desenvolvimento do projeto electron_transportadora para que a aplicação rode corretamente em sua máquina.
+
+## Pré-requisitos
+Antes de começar, verifique se você tem instalado:
+
+- Node.js (versão estável mais recente recomendada — exemplo usado: *v22.14.0*)  
+  Site oficial: https://nodejs.org
+- Visual Studio Code (ou outro editor de sua preferência)  
+  Site oficial: https://code.visualstudio.com
+
+> Observação: a pasta node_modules não é incluída no compartilhamento do projeto (por ser grande e específica por sistema). Cada desenvolvedor deve instalar as dependências localmente.
+
+## Passo a passo — Configuração do projeto
+
+1. Abra a pasta do projeto no Visual Studio Code (ou no seu editor).
+2. Abra o terminal na raiz do projeto. No VS Code o atalho é: `Ctrl + ` (crase).
+3. Instale todas as dependências com o comando:
+   npm install
+   O que esse comando faz:
+   - Lê package.json (e package-lock.json) e baixa todas as bibliotecas necessárias.
+   - Cria a pasta node_modules localmente com as dependências de produção e desenvolvimento.
+
+5. Execute a aplicação:
+   npm start
+   Esse comando inicializa a aplicação Electron e permite executar o projeto.
+
+## Observações importantes
+- Não é necessário executar npm init -y, pois o arquivo package.json já está presente no repositório.
+- Para adicionar novas dependências:
+  - Dependência de produção:
+    npm install <nome-da-dependência>
+  - Dependência de desenvolvimento:
+    npm install <nome-da-dependência> --save-dev
+- Caso encontre problemas específicos ao sistema operacional, verifique se a versão do Node.js é compatível e consulte a documentação da dependência que apresentar erro.
+
+## Resultado esperado
+Seguindo estes passos, o ambiente de desenvolvimento ficará configurado corretamente e a aplicação deverá rodar de forma consistente em diferentes máquinas.
+
+Se precisar de ajuda adicional, descreva o erro encontrado e compartilhe logs do terminal para facilitar o diagnóstico.
+
 ## Desenvolvimento de Software Corporativo
 arquivo: electron_transportadora
 
