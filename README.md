@@ -1,5 +1,13 @@
 # Software-Corporativo---Transportadora-Transmiguel
-Foi desenvolvido um projeto de software corporativo para a empresa de transporte Transmiguel, localizada em Jacutinga–MG. O objetivo do sistema é aprimorar a organização interna, abrangendo o controle de passageiros, rotas, veículos e processos financeiros.
+Foi desenvolvido um projeto de software corporativo para a empresa de transporte Transmiguel, localizada em Jacutinga–MG. O objetivo do sistema é aprimorar a organização interna da empresa, abrangendo o controle de passageiros, rotas, veículos e processos financeiros.
+
+A aplicação foi estruturada em níveis de acesso distribuídos entre três perfis de funcionários:
+
+Motorista: possui acesso restrito, podendo apenas visualizar suas viagens e informações referentes ao seu itinerário.
+
+Secretária: recebe permissão para cadastrar e editar passageiros, rotas e veículos, além de registrar pagamentos.
+
+Gerente: detém o nível máximo de acesso, podendo executar todas as funcionalidades anteriores e, adicionalmente, acompanhar e gerenciar toda a parte financeira da empresa.
 
 ## Instruções de uso
 
