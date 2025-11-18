@@ -109,3 +109,34 @@ Segurança e auditoria
 
 Notas finais
 - O sistema já tem a base de views e rotas; falta endurecer autenticação/autorizações e completar a auditoria em MySQL.
+
+## Sistemas Operacionais
+
+O estudo de Sistemas Operacionais foi planejado como base teórica para administração e gerenciamento de ambientes Windows e Linux, visando dar suporte ao desenvolvimento do software corporativo.  
+O foco é entender como o hardware e software interagem. Esta seção descreve o planejamento teórico da unidade de Sistemas Operacionais. Nenhuma execução prática foi realizada até o momento.
+
+Conteúdo Planejado
+
+- Conceitos Fundamentais: funções básicas, tipos de sistemas operacionais e interação hardware-software.
+- Processo de Inicialização (Boot): BIOS/UEFI, POST, ordem de boot e diagnóstico de problemas.
+- Instalação de SOs: Windows e Ubuntu Desktop em máquinas físicas ou virtuais.
+- Virtualização: criação e gerenciamento de VMs com Hyper-V.
+- Administração de Servidores: configuração básica de Windows Server e Ubuntu Desktop.
+- Segurança e Usuários: gerenciamento de usuários e grupos, permissões (chmod, chown) e configuração de sudoers.
+- Automação com Shell Script:scripts .sh para tarefas repetitivas e otimização de operações.
+
+Competências Esperadas
+
+- Diagnosticar problemas de inicialização e operação.
+- Implementar e migrar sistemas operacionais em diferentes cenários.
+- Administrar infraestruturas Windows Server e Linux.
+- Gerenciar ambientes virtualizados com eficiência.
+- Automatizar rotinas administrativas.
+- Garantir segurança através de permissões e controles de acesso.
+
+
+Interligação com o Projeto
+
+- Suporte à Aplicação Transmiguel: compreender SOs é essencial para hospedar o backend Node.js, banco de dados MySQL e Electron Desktop de forma estável.
+- Segurança e Auditoria: base para gerenciar permissões de usuários, logs e serviços, reforçando a integridade do software corporativo.
+- Virtualização e Recursos: permite planejar testes controlados e otimização de recursos em ambientes de desenvolvimento e produção.
